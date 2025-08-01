@@ -1,17 +1,27 @@
->**Note**: Please **fork** the current Udacity repository so that you will have a **remote** repository in **your** Github account. Clone the remote repository to your local machine. Later, as a part of the project "Post your Work on Github", you will push your proposed changes to the remote repository in your Github account.
+# Fun with Bikeshare Data
 
-### Date created
-Include the date you created this project and README file.
+This project is part of my Udacity course, where I learned how to work with data using Python and Git. It looks at bike-sharing data from three big cities in the U.S.: **Chicago, New York City, and Washington**.
 
-### Project Title
-Replace the Project Title
+## What This Program Does
 
-### Description
-Describe what your project is about and what it does
+Once you run the program, you'll be asked to choose a city and filter the data by month or day. Then it will show you different stats, like:
 
-### Files used
-Include the files used
+- When people ride the most
+- Which stations are most popular
+- How long trips usually take
+- Info about the riders _(like user type or birth year)_
+- The most popular combinations of start and end stations
 
-### Credits
-It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
+It also gives you the option to look at the raw data if you're curious.
 
+## How to Use It
+
+1. Download or clone this project.
+2. It runs on Python, you also need Pandas
+3. Put the data files (`chicago.csv`, `new_york_city.csv`, and `washington.csv`) in the same folder.
+4. Open your terminal or command prompt and run:
+
+```bash
+python bikeshare.py
+
+Michelle Hatch - Contributor
