@@ -238,7 +238,7 @@ def popular_trip_by_time_group(df):
     start_time = time.time()
 
     df['hour'] = df['Start Time'].dt.hour
-    df['Trip Combo'] = df['Start Station'] + " → " + df['End Station']
+    df['Trip Combo'] = "From " + df['Start Station'] + " to " + df['End Station']
 
     def get_time_of_day(hour):
         if 5 <= hour < 12:
