@@ -10,7 +10,9 @@ CITY_DATA = {
 
 def get_filters():
     """
-    Asks user to specify a city, month, and day to analyze.
+    Prompts the user to select a city, month, and day to filter the bikeshare data.
+    Returns the selections as strings for later use in data analysis.
+    """
 
     Returns:
         (str) city - name of the city to analyze
