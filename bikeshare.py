@@ -2,6 +2,8 @@ import time
 import pandas as pd
 import numpy as np
 
+
+
 CITY_DATA = {
     'chicago': 'chicago.csv',
     'new york city': 'new_york_city.csv',
@@ -17,7 +19,9 @@ def get_filters():
         (str) month - name of the month to filter by, or "all" to apply no month filter
         (str) day - name of the day of week to filter by, or "all" to apply no day filter
     """
-    print('Hello! Let\'s explore some US bikeshare data!')
+    print("Welcome! Current date and time:", 
+         pd.Timestamp.now().strftime("%B %d, %Y at %I:%M %p"))
+    print('Let\'s explore some US bikeshare data!')
 
     while True:
         city = input("Choose a city (Chicago, New York City, Washington): ").strip().lower()
@@ -205,6 +209,18 @@ def user_stats(df):
     else:
         print("Birth Year data not available for this city.")
 
+    #Subscribers vs Customer Users
+    user_counts = df['User Type'].value_counts()
+    total_users = user_counts.sum()
+    print("User Types:\n", user_counts, "\n")
+
+    # Display percentages
+    print("User Type Percentages:")
+    for user_type, count in user_counts.items():
+        percent = (count / total_users) * 100
+        print(f"  {user_type}: {percent:.2f}%")
+
+
     print(f"\nThis took {time.time() - start_time:.2f} seconds.")
     print('-' * 40)
 
@@ -244,22 +260,6 @@ def popular_trip_by_time_group(df):
     print(f"\nThis took {time.time() - start_time:.2f} seconds.")
     print('-' * 40)
 
-def display_raw_data(df):
-    """
-    Displays raw data 5 rows at a time upon user request.
-
-    Args:
-        df (DataFrame): bikeshare data
-
-    Returns:
-        None
-    """
-    i = 0
-    show = input("\nWould you like to see 5 lines of raw data? (yes/no): ").strip().lower()
-    while show == 'yes':
-        print(df.iloc[i:i+5])
-        i += 5
-        show = input("Would you like to see 5 more lines? (yes/no): ").strip().lower()
 
 def main():
     """
