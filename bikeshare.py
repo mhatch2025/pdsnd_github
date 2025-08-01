@@ -214,6 +214,9 @@ def user_stats(df):
     total_users = user_counts.sum()
     print("User Types:\n", user_counts, "\n")
 
+    user_types = df['User Type'].value_counts(normalize=True) * 100
+    print("User Type Breakdown (%):\n", user_types.round(2))
+
     # Display percentages
     print("User Type Percentages:")
     for user_type, count in user_counts.items():
